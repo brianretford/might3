@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer' as developer;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import '../models/task.dart';
@@ -70,7 +71,7 @@ class BeadsService {
         }
       }
     } catch (e) {
-      print('Sync error: $e');
+      developer.log('Sync error: $e', name: 'BeadsService');
       // Fail gracefully - local-first approach
     }
   }

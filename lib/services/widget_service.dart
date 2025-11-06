@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer' as developer;
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/task.dart';
 
@@ -27,7 +28,7 @@ class WidgetService {
       // On iOS, this would also trigger a widget update via WidgetKit
       // For now, widgets will poll for updates
     } catch (e) {
-      print('Error updating widget tasks: $e');
+      developer.log('Error updating widget tasks: $e', name: 'WidgetService');
     }
   }
   
@@ -42,7 +43,7 @@ class WidgetService {
         return decoded.cast<Map<String, dynamic>>();
       }
     } catch (e) {
-      print('Error getting widget tasks: $e');
+      developer.log('Error getting widget tasks: $e', name: 'WidgetService');
     }
     
     return [];

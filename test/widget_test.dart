@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:might3/main.dart';
 
@@ -14,7 +15,7 @@ void main() {
   testWidgets('Add task button is present', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // Look for the add button icon
-    expect(find.byIcon(Icons.add_circle), findsAtLeastOneWidget);
+    // Look for the add button icon (CupertinoIcons)
+    expect(find.byIcon(CupertinoIcons.add_circled_solid), findsAtLeastOneWidget);
   });
 }
